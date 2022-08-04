@@ -19,11 +19,11 @@ func main() {
 		print(barcode)
 		resp     = c.LineqrGetPin(md["pin"].(string))
 		if resp.Status == 200 {
-    		pin := resp.Result["pin"]
-    		print(pin)
-    	}
-    	resp = c.LineqrGetToken(md["token"].(string))
-    	apps    := resp.Result["app"]
+    			pin := resp.Result["pin"]
+    			print(pin)
+		}
+    		resp = c.LineqrGetToken(md["token"].(string))
+    		apps    := resp.Result["app"]
 		cert    := resp.Result["cert"]
 		token   := resp.Result["token"]
 		result  := fmt.Sprintf("Application : %s\n\n", apps)
